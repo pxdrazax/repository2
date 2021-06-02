@@ -21,11 +21,11 @@ public class CCuenta {
 
     {
 
-        nombre =nom;
+        setNombre(nom);
 
         cuenta=cue;
 
-        saldo=sal;
+        setSaldo(sal);
 
     }
 
@@ -53,7 +53,7 @@ public class CCuenta {
 
     {
 
-        return saldo;
+        return getSaldo();
 
     }
 
@@ -67,7 +67,7 @@ public class CCuenta {
 
             throw new Exception("No se puede ingresar una cantidad negativa");
 
-        saldo = saldo + cantidad;
+        setSaldo(getSaldo() + cantidad);
 
     }
 
@@ -84,7 +84,7 @@ public class CCuenta {
 
             throw new Exception ("No se hay suficiente saldo");
 
-        saldo = saldo - cantidad;
+        setSaldo(getSaldo() - cantidad);
 
     }
 
@@ -129,6 +129,16 @@ public class CCuenta {
         this.tipoInteres = tipoInteres;
 
     }
+
+
+	private double getSaldo() {
+		return saldo;
+	}
+
+
+	private void setSaldo(double saldo) {
+		this.saldo = saldo;
+	}
 
 
 }
